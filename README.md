@@ -1,4 +1,4 @@
-# Shoe Distribution
+# :sandal::shoe:Shoe Distribution:mans_shoe::high_heel:
 
 ##### This application is  designed to show my ability as a student at Epicodus to create a many-to-many relationship between shoes stores and the brands they carry using Active Record.
 

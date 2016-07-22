@@ -1,0 +1,21 @@
+<div class="col-sm-6">
+  <h3><span class="glyphicon glyphicon-edit"></span>List of current Shoe Stores</h3>
+  <% if @stores.any?() %>
+    <ul>
+      <% @stores.each() do |store| %>
+        <li>Name: <%= store.name() %> </li>
+     <% end %>
+   </ul>
+   <% end %>
+
+
+
+<h2>Add a new Store</h2>
+ <form action="/stores/new" method="post" class="well">
+ <ul>
+   <li><label for="name">Store Name</label><br>
+   <input id="name" name="name" type="text"></li>
+   <li><button type="submit">Add Store</button></li>
+ </ul>
+ </form>
+</div>
