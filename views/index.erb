@@ -17,3 +17,44 @@
    <button type="submit">Add Store</button>
  </form>
 </div>
+
+
+
+
+<form class="well" action="/brands" method="post">
+     <label for="brand_name">New Brand</label>
+     <input id="brand_name" name="brand_name" type="text">
+     <button type="submit" >Add a brand!</button>
+   </form>
+
+   <form class="well" action="/add_brands_to_store" method="post">
+     <input type="hidden" name="_method" value="patch">
+     <div>
+       <h3>Which store do you want to add the shoes?</h3>
+       <% if @brands.any?() %>
+           <% @brands.each() do |brand| %>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" name="brands_ids[]" value="<%= brand.id() %>"><%= brand.name()%>
+               </label>
+             </div>
+           <% end %>
+       <% else %>
+         <h4>Add brands, please.</h4>
+       <% end %>
+     </div>
+     <div>
+       <h3>Add brands to a store</h3>
+       <% if @stores.any?() %>
+         <select class="form-control" name="brands_in_this_store">
+           <% @stores.each() do |store| %>
+             <option value="<%= store.id() %>"><%= store.name() %></option>
+           <% end %>
+         </select>
+       <% else %>
+         <h4>No Stores created yet</h4>
+       <% end %>
+       <button type="submit" class="btn btn-lg btn-success">Add brands to store</button>
+     </div>
+   </form>
+ </div>

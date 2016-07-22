@@ -4,6 +4,7 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get '/' do
   @stores = Store.all()
+  @brands = Brand.all()
   erb(:index)
 end
 
@@ -22,4 +23,10 @@ delete '/stores/:id/delete'  do
   @store = Store.find(params.fetch("id").to_i())
   @store.destroy()
 redirect("/")
+end
+
+post '/brands' do
+  name = params.fetch("brand_name")
+  Brand.create({:name => name, :id => nil})
+  redirect("/")
 end
