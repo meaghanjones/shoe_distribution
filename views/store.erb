@@ -1,8 +1,9 @@
 <h3><%= @store.name %> </h3>
-<ul>
-<% @store.name()  %>
 
-<h1>Delete This Store</h1>
+
+
+
+<h1>Delete <% @store.name()  %></h1>
 <form action="/stores/<%= @store.id() %>/delete" method="post">
   <input type="hidden" name="_method" value="delete">
   <button type="submit" class="btn btn-lg btn-warning">Delete</button>
