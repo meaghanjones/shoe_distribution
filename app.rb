@@ -30,3 +30,11 @@ post '/brands' do
   Brand.create({:name => name, :id => nil})
   redirect("/")
 end
+
+patch '/add_brands_to_store' do
+  store_id = params.fetch("brands_in_this_store").to_i()
+  store = Store.find(store_id)
+  brands_ids = params.fetch("brands_ids")
+  store.update({:brand_ids => brands_ids})
+  redirect('/')
+end
