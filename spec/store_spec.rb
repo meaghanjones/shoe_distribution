@@ -9,4 +9,9 @@ describe(Store) do
       expect(test_store.brands()).to(eq([test_brand1]))
     end
   end
+
+  it("capitalizes the first letter of the store name") do
+    test_store = Store.create({:name => "dick's"})
+    expect(test_store.name()).to(eq("Dick's"))
+  end
 end

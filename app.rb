@@ -27,7 +27,7 @@ end
 
 post '/brands' do
   name = params.fetch("brand_name")
-  Brand.create({:name => name, :id => nil})
+  Brand.create({:name => name})
   redirect("/")
 end
 
