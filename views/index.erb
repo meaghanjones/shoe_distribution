@@ -2,9 +2,15 @@
   <h3><span class="glyphicon glyphicon-edit"></span>List of current Shoe Stores</h3>
   <% if @stores.any?() %>
     <ul>
-    <% @stores.each() do |store| %> <li> <a href="/stores/<%= store.id() %>"><%= store.name() %></a> </li>
-     <% end %>
-   </ul>
+    <% @stores.each() do |store| %> <li> <a href="/stores/<%= store.id() %>"><%= store.name() %></a> || Brands:
+      <% if @brands.any?() %>
+        <% store.brands.each() do |brand|%>
+        <%= brand.name() %>
+      <% end %>
+      <% end %>
+      <% end %>
+    </li>
+    </ul>
    <% end %>
 
 

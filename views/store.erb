@@ -1,5 +1,22 @@
 <h3><%= @store.name %> </h3>
 
+<h5>Update <%=@store.name() %>'s name </h5>
+<form action="/stores/<%= @store.id()%>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="store_name">Rename this store:</label>
+  <input id="store_name" name="store_name" type="text">
+  <button type="submit">Update</button>
+</form>
+
+
+<% if @store.brands.any? %>
+  <h2>Brands available </h2>
+  <ul>
+    <% @store.brands.each do | brand | %>
+    <li><%= brand.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
 
 
 

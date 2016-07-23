@@ -10,19 +10,27 @@ end
 
 get '/stores/:id' do
   @store = Store.find(params.fetch("id").to_i())
+  @brands = Brand.all()
   erb(:store)
 end
 
 post '/stores/new' do
   name = params.fetch("name")
   Store.create({:name => name, :id => nil})
-redirect("/")
+  redirect("/")
 end
 
 delete '/stores/:id/delete'  do
   @store = Store.find(params.fetch("id").to_i())
   @store.destroy()
-redirect("/")
+  redirect("/")
+end
+
+patch '/stores/:id' do
+  name = params.fetch("store_name")
+  store = Store.find(params.fetch("id").to_i())
+  store.update({:name => name})
+  redirect('/stores/#{store.id}')
 end
 
 post '/brands' do
