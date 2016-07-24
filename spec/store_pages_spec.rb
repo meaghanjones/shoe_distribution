@@ -20,3 +20,13 @@ describe('deleting a store path', {:type => :feature}) do
     expect(page).to have_content('List of current Shoe Stores')
   end
 end
+
+describe('showing brands in a store', {:type => :feature}) do
+  it('shows the user all brands associated with a store') do
+    store = Store.create({:name => 'Keds Outlet'})
+    store.brands().create({:name => 'Nike'})
+    visit('/')
+    click_link('Keds Outlet')
+    expect(page).to have_content('Nike')
+  end
+end

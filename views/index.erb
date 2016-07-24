@@ -15,21 +15,21 @@
 
 
 
-  <h2>Add a new Store</h2>
+  <h4>Add a new Store</h4>
   <form action="/stores/new" method="post" class="well">
     <label for="name">Store Name</label><br>
     <input id="name" name="name" type="text">
-    <button type="submit">Add Store</button>
+    <button type="submit" class="btn btn-success">Add Store</button>
   </form>
 </div>
 
 
 <div class="col-sm-6">
-  <h2>Add a new Brand</h2>
+  <h4>Add a new Brand</h4>
   <form class="well" action="/brands" method="post">
     <label for="brand_name"><i class="em em-high_heel"></i>New Brand <i class="em em-shoe"></i></label>
     <input id="brand_name" name="brand_name" type="text">
-    <button type="submit" >Add a brand!</button>
+    <button id="add_brand" class="btn btn-success" type="submit" >Add a brand!</button>
   </form>
 
   <form class="well" action="/add_brands_to_store" method="post">
@@ -57,7 +57,7 @@
     <% else %>
       <h4>No Stores created yet</h4>
   <% end %>
-    <button type="submit" class="btn btn-lg btn-success">Add brands to store</button>
+    <button type="submit" class="btn btn-success">Add brands to store</button>
   </div>
   </form>
  </div>
