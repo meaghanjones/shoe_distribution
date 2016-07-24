@@ -10,7 +10,7 @@ Database: Postgres
 
 Installation
 ------------
-
+Begin the installation by cloning the repository from github.
 ```
 $ git clone https://github.com/meaghanjones/shoe_distribution
 ```
@@ -19,7 +19,10 @@ Install required gems:
 ```
 $ bundle install
 ```
-
+Run Postgres
+```
+$postgres
+```
 Create databases:
 ```
 rake db:create
@@ -35,5 +38,5 @@ Navigate to `localhost:4567` in browser.
 
 License
 -------
-
-Copyright 2016 **Meaghan**
+This software is licensed under the MIT license.
+Copyright (c) 2016 **Meaghan**
